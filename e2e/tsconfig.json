@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./e2e",
+    "rootDir": "./e2e",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
+    "strict": true,
+    "types": ["cypress"],
+    "noEmit": true
+  },
+  "include": ["../node_modules/cypress", "./support/index.d.ts", "**/*.spec.ts"]
+}
