@@ -121,7 +121,6 @@
     "opener": "^1.5.2",
     "prettier": "^2.3.0",
     "prop-types": "^15.7.2",
-    "redux-devtools-extension": "^2.13.9",
     "redux-saga-test-plan": "^4.0.1",
     "sass": "^1.32.13",
     "stylelint": "^13.13.1",

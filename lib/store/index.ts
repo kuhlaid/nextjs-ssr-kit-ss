@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { MakeStore, createWrapper } from "next-redux-wrapper";
 import createSagaMiddleware from "redux-saga";
 import rootReducer, { TRootState } from "lib/reducers/";
@@ -9,10 +8,7 @@ import { SagaStore } from "lib/types";
 export const makeStore: MakeStore<TRootState> = () => {
   const saga = createSagaMiddleware();
 
-  const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(saga))
-  ) as SagaStore;
+  const store = createStore(rootReducer, applyMiddleware(saga)) as SagaStore;
 
   store.sagaTask = saga.run(rootSaga);
 
