@@ -13,7 +13,7 @@ describe("Get All Tags Route", () => {
 
   it("routes requests to the getTags controller", async done => {
     await app()
-      .get("/api/tags")
+      .get("/api/tags/all")
       .expect("Content-Type", /json/)
       .expect(200)
       .then(res => {

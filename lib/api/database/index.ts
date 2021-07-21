@@ -14,11 +14,13 @@ if (!DATABASE_URI) {
  * during API Route usage. Note we declare mongoose globally in the utils/types/index file
  * so TypeScript will not issue warnings.
  */
+// @ts-ignore
 let cached = global.mongoose;
 
 if (!cached) {
-  // eslint-disable-next-line no-multi-assign
-  cached = global.mongoose = { conn: null, promise: null };
+  // @ts-ignore
+  global.mongoose = { conn: null, promise: null };
+  cached = { conn: null, promise: null };
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
