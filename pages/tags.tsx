@@ -139,7 +139,6 @@ const ShowTags = ({
           <LoadingTags height={398} width={780} opacity="1" />
         ) : (
           <FadeIn timing="0.3s">
-            Tags here
             <DisplayTagList
               {...state}
               {...rest}

@@ -14,7 +14,7 @@ import {
 import { AnyAction, Store } from "redux";
 import { SagaIterator, Task } from "redux-saga";
 import { ConnectedProps } from "react-redux";
-import { TRootState } from "lib/reducers/";
+import { TRootState } from "lib/reducers";
 
 // DATABASE (this will be used globally so we need to declare the type)
 declare const mongoose: mongoose;

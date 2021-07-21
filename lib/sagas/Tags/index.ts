@@ -23,7 +23,7 @@ export function* fetchTags(): SagaIterator {
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.get, "tags");
+    const res = yield call(app.get, "api/tags/all");
     const data = yield call(parseData, res);
 
     yield put(setTags(data));
@@ -50,7 +50,7 @@ export function* createTag({
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.post, "tags/create", payload);
+    const res = yield call(app.post, "api/tags/create", payload);
     const message = yield call(parseMessage, res);
 
     yield call(toast, { type: "success", message });
@@ -81,7 +81,7 @@ export function* deleteTag({
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.delete, `tags/delete/${payload}`);
+    const res = yield call(app.delete, `api/tags/delete/${payload}`);
     const message = yield call(parseMessage, res);
 
     yield call(toast, { type: "success", message });
@@ -107,7 +107,7 @@ export function* seedDB(): SagaIterator {
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.post, "tags/seed");
+    const res = yield call(app.post, "api/tags/seed");
     const data = yield call(parseData, res);
 
     yield put(setTags(data));
@@ -134,7 +134,7 @@ export function* updateTag({
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.put, `tags/update/${payload?._id}`, payload);
+    const res = yield call(app.put, `api/tags/update/${payload?._id}`, payload);
     const message = yield call(parseMessage, res);
 
     yield call(toast, { type: "info", message });

@@ -23,7 +23,7 @@ export function* fetchUsers(): SagaIterator {
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.get, "users");
+    const res = yield call(app.get, "api/users/all");
     const data = yield call(parseData, res);
 
     yield put(setUsers(data));
@@ -50,7 +50,7 @@ export function* createUser({
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.post, "users/create", payload);
+    const res = yield call(app.post, "api/users/create", payload);
     const message = yield call(parseMessage, res);
 
     yield call(toast, { type: "success", message });
@@ -81,7 +81,7 @@ export function* deleteUser({
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.delete, `users/delete/${payload}`);
+    const res = yield call(app.delete, `api/users/delete/${payload}`);
     const message = yield call(parseMessage, res);
 
     yield call(toast, { type: "success", message });
@@ -107,7 +107,7 @@ export function* seedDB(): SagaIterator {
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.post, "users/seed");
+    const res = yield call(app.post, "api/users/seed");
     const data = yield call(parseData, res);
 
     yield put(setUsers(data));
@@ -134,7 +134,11 @@ export function* updateUser({
   try {
     yield put(resetMessage());
 
-    const res = yield call(app.put, `users/update/${payload?._id}`, payload);
+    const res = yield call(
+      app.put,
+      `api/users/update/${payload?._id}`,
+      payload
+    );
     const message = yield call(parseMessage, res);
 
     yield call(toast, { type: "info", message });

@@ -1,14 +1,19 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-// import isEmpty from "lodash.isempty";
+import dbConnect from "lib/api/database";
+import type { NextApiRequest, NextApiResponse } from "next";
 import Tag from "lib/api/models/tag";
 
-const createTag = async (req: Request, res: Response): Promise<Response> => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async function createTag(
+  req: NextApiRequest,
+  res: NextApiResponse<{ message: string } | { err: string }>
+) {
+  await dbConnect();
+  const { tagName, category } = req.body;
+
+  if (!tagName || !category)
+    throw String("Missing tag card creation parameters.");
+
   try {
-    const { tagName, category } = req.body;
-
-    if (!tagName || !category)
-      throw String("Missing tag card creation parameters.");
-
     const tagNameTaken = await Tag.findOne({ tagName });
     if (tagNameTaken) throw String("That tagname is already in use!");
 
@@ -23,6 +28,4 @@ const createTag = async (req: Request, res: Response): Promise<Response> => {
   } catch (err) {
     return res.status(400).json({ err: err.toString() });
   }
-};
-
-export default createTag;
+}
