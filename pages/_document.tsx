@@ -5,7 +5,6 @@
 
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { version } from "package.json";
 
 class CustomDocument extends Document {
   render = (): JSX.Element => (
