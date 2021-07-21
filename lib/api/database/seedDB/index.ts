@@ -2,7 +2,7 @@
 
 import mongoose from "mongoose";
 import { logErrorMessage, logInfoMessage } from "logger";
-import { connectToDB, createConnectionToDatabase } from "lib/api/database/index";
+import dbConnect from "lib/api/database";
 import User from "lib/api/models/user";
 import Tag from "lib/api/models/tag";
 import userSeeds from "lib/api/database/seedDB/userSeeds";
@@ -19,16 +19,13 @@ const { DATABASE_URI, EXIT, SEED } = process.env;
  */
 const seedUsers = async (): Promise<any> => {
   try {
-    await connectToDB();
-    const db = await createConnectionToDatabase();
+    await dbConnect();
     const databaseExists = User.findOne({
       email: "thefifthelement@example.com"
     });
-    if (await databaseExists) await db.dropDatabase();
+    if (await databaseExists) await mongoose.connection.dropDatabase();
 
     await User.insertMany(userSeeds);
-
-    await db.close();
 
     logInfoMessage(
       `\x1b[2mutils/\x1b[0m\x1b[1muserSeeds.js\x1b[0m (${DATABASE_URI})\n`
@@ -57,16 +54,13 @@ const seedUsers = async (): Promise<any> => {
  */
 const seedTags = async (): Promise<any> => {
   try {
-    await connectToDB();
-    const db = await createConnectionToDatabase();
+    await dbConnect();
     const databaseExists = Tag.findOne({
       tagName: "PHP"
     });
-    if (await databaseExists) await db.dropDatabase();
+    if (await databaseExists) await mongoose.connection.dropDatabase();
 
     await Tag.insertMany(tagSeeds);
-
-    await db.close();
 
     logInfoMessage(
       `\x1b[2mutils/\x1b[0m\x1b[1mtagSeeds.js\x1b[0m (${DATABASE_URI})\n`

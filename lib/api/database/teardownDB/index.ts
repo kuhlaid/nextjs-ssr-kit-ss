@@ -2,8 +2,8 @@
 // Since this is being utilized by "jest.json", paths must be relative
 
 import mongoose from "mongoose";
-import { connectToDB, createConnectionToDatabase } from "../index";
-import { logErrorMessage, logInfoMessage } from "../logger";
+import dbConnect from "lib/api/database";
+import { logErrorMessage, logInfoMessage } from "logger";
 
 const { DATABASE_URI, DROP, EXIT } = process.env;
 
@@ -20,10 +20,8 @@ const { DATABASE_URI, DROP, EXIT } = process.env;
 
 const teardownDB = async (): Promise<any> => {
   try {
-    await connectToDB();
-    const db = await createConnectionToDatabase();
-    await db.dropDatabase();
-    await db.close();
+    await dbConnect();
+    await mongoose.connection.dropDatabase();
 
     logInfoMessage(
       `\x1b[2mutils/\x1b[0m\x1b[1mteardownDB.js\x1b[0m (${DATABASE_URI})\n`

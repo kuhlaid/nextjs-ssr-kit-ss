@@ -22,7 +22,7 @@
     "drop:dev": "ENV_DEBUG=true ENV_LOAD=.env.teardown,.env.dev ts-node --project ./api/tsconfig.json -r tsconfig-paths/register ./api/database/teardownDB/index.ts",
     "drop:prod": "ENV_DEBUG=true ENV_LOAD=.env.teardown,.env.prod ts-node --project ./api/tsconfig.json -r tsconfig-paths/register ./api/database/teardownDB/index.ts",
     "drop:stage": "ENV_DEBUG=true ENV_LOAD=.env.teardown,.env.staging ts-node --project ./api/tsconfig.json -r tsconfig-paths/register ./api/database/teardownDB/index.ts",
-    "lint": "eslint -c ./.eslintrc --ignore-path ./.eslintignore ./src --ext .ts,.tsx",
+    "lint": "eslint -c ./.eslintrc --ignore-path ./.eslintignore ./lib --ext .ts,.tsx",
     "l:api": "eslint -c ./api/.eslintrc --ignore-path ./api/.eslintignore ./api --ext .ts,.tsx",
     "l:styles": "stylelint **/*.scss",
     "seed:dev": "ENV_DEBUG=true ENV_LOAD=.env.seed,.env.dev ts-node --project ./api/tsconfig.json -r tsconfig-paths/register ./api/database/seedDB/index.ts",

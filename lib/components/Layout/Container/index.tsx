@@ -1,5 +1,5 @@
-import CardWrapper from "./CardWrapper";
-import ContainerWrapper from "./ContainerWrapper";
+import CardWrapper from "lib/components/Layout/Container/CardWrapper";
+import ContainerWrapper from "lib/components/Layout/Container/ContainerWrapper";
 import { CSSProperties, ReactElement, ReactNode } from "lib/types";
 
 export type ContainerProps = {

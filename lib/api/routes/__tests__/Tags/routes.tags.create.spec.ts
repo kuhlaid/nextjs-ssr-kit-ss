@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { connectToDB } from "~database";
-import app from "~testServer";
+import dbConnect from "lib/api/database";
+import app from "lib/api/testServer";
 
 const data = {
   tagName: "Svelte",
@@ -9,7 +9,7 @@ const data = {
 
 describe("Get Create Tags Route", () => {
   beforeAll(async () => {
-    await connectToDB();
+    await dbConnect();
   });
 
   afterAll(async () => {

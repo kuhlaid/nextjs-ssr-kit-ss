@@ -7,9 +7,9 @@ import {
   BsInfoSquareFill,
   BsQuestionSquareFill
 } from "react-icons/bs";
-import AlertContainer from "./AlertContainer";
-import AlertMessage from "./AlertMessage";
-import AlertType from "./AlertType";
+import AlertContainer from "lib/components/App/Toast/AlertContainer";
+import AlertMessage from "lib/components/App/Toast/AlertMessage";
+import AlertType from "lib/components/App/Toast/AlertType";
 import { ReactElement } from "lib/types";
 
 export const displayIcon = (type: string | undefined): ReactElement => {

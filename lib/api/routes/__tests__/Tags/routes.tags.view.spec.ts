@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import { connectToDB } from "~database";
+import dbConnect from "lib/api/database";
 import Tag, { TTagDocument } from "lib/api/models/tag";
-import app from "~testServer";
+import app from "lib/api/testServer";
 
 const data = {
   tagName: "PHP",
@@ -11,7 +11,7 @@ const data = {
 describe("View Tag Route", () => {
   let tag: TTagDocument;
   beforeAll(async () => {
-    await connectToDB();
+    await dbConnect();
     tag = await Tag.create(data);
   });
 

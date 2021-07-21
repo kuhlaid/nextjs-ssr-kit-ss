@@ -8,7 +8,7 @@ import FlexStart from "lib/components/Layout/FlexStart";
 import fieldValidator from "lib/utils/fieldValidator";
 import fieldUpdater from "lib/utils/fieldUpdater";
 import parseFields from "lib/utils/parseFields";
-import generateFields from "./Fields";
+import generateFields from "lib/components/Forms/UserForm/Fields";
 import type { BaseFieldProps, FormEvent, UserData } from "lib/types";
 
 const Form = styled.form`

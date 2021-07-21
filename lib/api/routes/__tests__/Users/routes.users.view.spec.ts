@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import { connectToDB } from "~database";
+import dbConnect from "lib/api/database";
 import User, { TUserDocument } from "lib/api/models/user";
-import app from "~testServer";
+import app from "lib/api/testServer";
 
 const data = {
   email: "viewexample@test.com",
@@ -21,7 +21,7 @@ const data = {
 describe("View User Route", () => {
   let user: TUserDocument;
   beforeAll(async () => {
-    await connectToDB();
+    await dbConnect();
     user = await User.create(data);
   });
 

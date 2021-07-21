@@ -4,13 +4,13 @@ import { FaTimes } from "react-icons/fa";
 import Flex from "lib/components/Layout/Flex";
 import FlexEnd from "lib/components/Layout/FlexEnd";
 import FlexStart from "lib/components/Layout/FlexStart";
-import BackgroundOverlay from "./BackgroundOverlay";
-import CloseModalButton from "./CloseModalButton";
-import ModalContent from "./ModalContent";
-import ModalContainer from "./ModalContainer";
-import ModalRoot from "./ModalRoot";
-import ModalTitle from "./ModalTitle";
-import WindowContainer from "./WindowContainer";
+import BackgroundOverlay from "lib/components/Layout/Modal/BackgroundOverlay";
+import CloseModalButton from "lib/components/Layout/Modal/CloseModalButton";
+import ModalContent from "lib/components/Layout/Modal/ModalContent";
+import ModalContainer from "lib/components/Layout/Modal/ModalContainer";
+import ModalRoot from "lib/components/Layout/Modal/ModalRoot";
+import ModalTitle from "lib/components/Layout/Modal/ModalTitle";
+import WindowContainer from "lib/components/Layout/Modal/WindowContainer";
 import { MouseEvent, ReactNode, ReactElement } from "lib/types";
 
 export type ModalProps = {

@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import { connectToDB } from "~database";
-import app from "~testServer";
+import dbConnect from "lib/api/database";
+import app from "lib/api/testServer";
 
 describe("Get All Tags Route", () => {
   beforeAll(async () => {
-    await connectToDB();
+    await dbConnect();
   });
 
   afterAll(async () => {

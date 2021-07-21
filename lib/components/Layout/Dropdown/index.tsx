@@ -1,7 +1,7 @@
-import ClickHandler from "./ClickHandler";
-import DropdownContainer from "./DropdownContainer";
-import DropdownMenu from "./DropdownMenu";
-import SelectContainer from "./SelectContainer";
+import ClickHandler from "lib/components/Layout/Dropdown/ClickHandler";
+import DropdownContainer from "lib/components/Layout/Dropdown/DropdownContainer";
+import DropdownMenu from "lib/components/Layout/Dropdown/DropdownMenu";
+import SelectContainer from "lib/components/Layout/Dropdown/SelectContainer";
 import { ReactNode, ReactElement } from "lib/types";
 
 export type DropdownProps = {
