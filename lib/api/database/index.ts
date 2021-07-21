@@ -27,7 +27,9 @@ async function connectToDB() {
   }
 
   if (!cached.promise) {
+    // setting poolSize to limit the number of sockets to MongoDb (https://mongoosejs.com/docs/connections.html#options)
     const opts = {
+      poolSize: 1,
       useNewUrlParser: true,
       useUnifiedTopology: true,
       bufferCommands: false,
