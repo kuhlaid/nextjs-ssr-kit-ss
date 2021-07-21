@@ -1,13 +1,13 @@
 # NextJs SSR Kit (Single Server)
 
-This version of the app moves all the API related things back to the single
+This version of the app moves all API related things back to a single
 NextJs server.
 
 This a template for creating a NextJs app with testing and best practices and much more. The build scripts and configurations assume you are using a Linux shell. If you are a Windows user, then setup WSL and use the 'Remote - WSL' plugin within VSCode to run and test the app locally (DO NOT USE Powershell or DOS).
 
 ![logo.png](https://i.imgur.com/xd1mL6K.png)
 
-[![Codecov](https://img.shields.io/codecov/c/github/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://codecov.io/gh/mattcarlotta/nextjs-ssr-kit) [![Open Issues](https://img.shields.io/github/issues-raw/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/mattcarlotta/nextjs-ssr-kit/issues) [![Dependencies](https://img.shields.io/david/mattcarlotta/nextjs-ssr-kit.svg?style=for-the-badge)](https://david-dm.org/mattcarlotta/nextjs-ssr-kit) [![License](https://img.shields.io/github/license/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/mattcarlotta/nextjs-ssr-kit/blob/master/LICENSE)
+[![Codecov](https://img.shields.io/codecov/c/github/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://codecov.io/gh/kuhlaid/nextjs-ssr-kit-ss) [![Open Issues](https://img.shields.io/github/issues-raw/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/kuhlaid/nextjs-ssr-kit-ss/issues) [![Dependencies](https://img.shields.io/david/mattcarlotta/nextjs-ssr-kit.svg?style=for-the-badge)](https://david-dm.org/kuhlaid/nextjs-ssr-kit-ss) [![License](https://img.shields.io/github/license/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/kuhlaid/nextjs-ssr-kit-ss/blob/master/LICENSE)
 
 ## Table of contents
 
