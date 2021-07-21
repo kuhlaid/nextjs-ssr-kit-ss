@@ -7,25 +7,30 @@ export default async function createTag(
   req: NextApiRequest,
   res: NextApiResponse<{ message: string } | { err: string }>
 ) {
+  const { method } = req;
   await dbConnect();
-  const { tagName, category } = req.body;
+  switch (method) {
+    case "POST":
+      // eslint-disable-next-line no-case-declarations
+      const { tagName, category } = req.body;
 
-  if (!tagName || !category)
-    throw String("Missing tag card creation parameters.");
+      if (!tagName || !category)
+        throw String("Missing tag card creation parameters.");
 
-  try {
-    const tagNameTaken = await Tag.findOne({ tagName });
-    if (tagNameTaken) throw String("That tagname is already in use!");
+      try {
+        const tagNameTaken = await Tag.findOne({ tagName });
+        if (tagNameTaken) throw String("That tagname is already in use!");
 
-    await Tag.create({
-      tagName,
-      category
-    });
+        await Tag.create({
+          tagName,
+          category
+        });
 
-    return res
-      .status(201)
-      .json({ message: `Successfully created ${tagName}.` });
-  } catch (err) {
-    return res.status(400).json({ err: err.toString() });
+        return res
+          .status(201)
+          .json({ message: `Successfully created ${tagName}.` });
+      } catch (err) {
+        return res.status(400).json({ err: err.toString() });
+      }
   }
 }

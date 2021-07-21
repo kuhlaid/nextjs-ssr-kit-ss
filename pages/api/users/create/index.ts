@@ -11,38 +11,47 @@ export default async function createUser(
     LeanDocument<TUserDocument[]> | { message: string } | { err: string }
   >
 ) {
-  // const { method } = req
+  const { method } = req;
   await dbConnect();
-  try {
-    const { email, firstName, lastName, userName, backgroundInfo, address } =
-      req.body;
+  switch (method) {
+    case "POST":
+      try {
+        const {
+          email,
+          firstName,
+          lastName,
+          userName,
+          backgroundInfo,
+          address
+        } = req.body;
 
-    if (
-      !email ||
-      !firstName ||
-      !lastName ||
-      !userName ||
-      !backgroundInfo ||
-      isEmpty(address)
-    )
-      throw String("Missing user card creation parameters.");
+        if (
+          !email ||
+          !firstName ||
+          !lastName ||
+          !userName ||
+          !backgroundInfo ||
+          isEmpty(address)
+        )
+          throw String("Missing user card creation parameters.");
 
-    const userNameTaken = await User.findOne({ userName });
-    if (userNameTaken) throw String("That username is already in use!");
+        const userNameTaken = await User.findOne({ userName });
+        if (userNameTaken) throw String("That username is already in use!");
 
-    await User.create({
-      email,
-      firstName,
-      lastName,
-      userName,
-      backgroundInfo,
-      address
-    });
+        await User.create({
+          email,
+          firstName,
+          lastName,
+          userName,
+          backgroundInfo,
+          address
+        });
 
-    return res
-      .status(201)
-      .json({ message: `Successfully created ${userName}.` });
-  } catch (err) {
-    return res.status(400).json({ err: err.toString() });
+        return res
+          .status(201)
+          .json({ message: `Successfully created ${userName}.` });
+      } catch (err) {
+        return res.status(400).json({ err: err.toString() });
+      }
   }
 }
