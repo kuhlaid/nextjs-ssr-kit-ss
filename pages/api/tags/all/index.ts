@@ -1,11 +1,11 @@
 import dbConnect from "lib/api/database";
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next"; // NextApiRequest
 import Tag, { TTagDocument } from "lib/api/models/tag";
 import { LeanDocument } from "mongoose";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default async function getTags(
-  req: NextApiRequest,
+  // req: NextApiRequest,
   res: NextApiResponse<LeanDocument<TTagDocument[]>>
 ) {
   // const { method } = req

@@ -1,8 +1,18 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import dbConnect from "lib/api/database";
+import type { NextApiRequest, NextApiResponse } from "next";
 import isEmpty from "lodash.isempty";
-import User from "lib/api/models/user";
+import User, { TUserDocument } from "lib/api/models/user";
+import { LeanDocument } from "mongoose";
 
-const createUser = async (req: Request, res: Response): Promise<Response> => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export default async function createUser(
+  req: NextApiRequest,
+  res: NextApiResponse<
+    LeanDocument<TUserDocument[]> | { message: string } | { err: string }
+  >
+) {
+  // const { method } = req
+  await dbConnect();
   try {
     const { email, firstName, lastName, userName, backgroundInfo, address } =
       req.body;
@@ -35,6 +45,4 @@ const createUser = async (req: Request, res: Response): Promise<Response> => {
   } catch (err) {
     return res.status(400).json({ err: err.toString() });
   }
-};
-
-export default createUser;
+}
