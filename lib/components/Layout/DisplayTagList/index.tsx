@@ -3,7 +3,6 @@
  */
 import * as React from "react";
 import isEmpty from "lodash.isempty";
-import Badge from "react-bootstrap/Badge";
 import TagForm from "lib/components/Forms/TagForm";
 import Card from "lib/components/Layout/TagCard";
 import FadeIn from "lib/components/Layout/FadeIn";
@@ -34,12 +33,7 @@ const DisplayTagList = ({
   <>
     {!isEmpty(data) ? (
       data.map((props: TagData, idx) => (
-        <Badge
-          className="m-2 p-2"
-          variant="light"
-          data-testid="tag-card"
-          key={props._id}
-        >
+        <div className="m-2 p-2" key={props._id}>
           {isEditingID !== props._id ? (
             <Card
               {...props}
@@ -62,7 +56,7 @@ const DisplayTagList = ({
               />
             </FadeIn>
           )}
-        </Badge>
+        </div>
       ))
     ) : (
       <NoData dataType="tag" />
