@@ -39,7 +39,9 @@ const CardComponent = ({
         </DropdownButton>
       </div>
     </div>
-    <span className="ps-2 pe-2 small p-1 bg-info text-light rounded-pill">{category}</span>
+    <span className="ps-2 pe-2 small p-1 bg-info text-light rounded-pill">
+      {category}
+    </span>
   </div>
 );
 

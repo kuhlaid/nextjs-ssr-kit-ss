@@ -8,6 +8,7 @@ export type TagListNavigationProps = {
   seedDB: (type: string) => ReturnType<SeedDB>;
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const TagListNavigationComponent = ({
   openModal,
   seedDB
