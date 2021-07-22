@@ -32,3 +32,5 @@ yarn-error.log*
 # this will get built when installing the app so no need to add to source control
 package-lock.json
 .env.dev
+BuildProcesses.md
+yarn.lock

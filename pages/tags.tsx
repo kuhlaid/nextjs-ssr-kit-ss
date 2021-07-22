@@ -107,7 +107,7 @@ const ShowTags = ({
         <TagListNavigation openModal={handleOpenModal} seedDB={seedDB} />
       </div>
       <div>
-        <div>
+        <div className="d-flex">
           {state.openModal && (
             <Modal
               onClick={handleCloseModal}

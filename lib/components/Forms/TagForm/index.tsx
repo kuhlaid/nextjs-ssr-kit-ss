@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import Button from "lib/components/Layout/Button";
+import ButtonEx from "lib/components/Layout/ButtonEx";
 import FieldGenerator from "lib/components/Forms/FieldGenerator";
 import Flex from "lib/components/Layout/Flex";
 import FlexEnd from "lib/components/Layout/FlexEnd";
@@ -106,19 +106,24 @@ const TagForm = (props: TagFormProps): JSX.Element => {
       </Flex>
       <Flex style={{ padding: "0 15px", marginBottom: 10 }}>
         <FlexStart>
-          <Button dataTestId="cancel" danger type="button" onClick={cancelForm}>
+          <ButtonEx
+            dataTestId="cancel"
+            danger
+            type="button"
+            onClick={cancelForm}
+          >
             Cancel
-          </Button>
+          </ButtonEx>
         </FlexStart>
         <FlexEnd>
-          <Button
+          <ButtonEx
             dataTestId="submit"
             primary
             disabled={isSubmitting}
             type="submit"
           >
             Submit
-          </Button>
+          </ButtonEx>
         </FlexEnd>
       </Flex>
     </Form>

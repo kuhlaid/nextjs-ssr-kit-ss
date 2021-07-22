@@ -9,6 +9,20 @@ This a template for creating a NextJs app with testing and best practices and mu
 
 [![Codecov](https://img.shields.io/codecov/c/github/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://codecov.io/gh/kuhlaid/nextjs-ssr-kit-ss) [![Open Issues](https://img.shields.io/github/issues-raw/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/kuhlaid/nextjs-ssr-kit-ss/issues) [![Dependencies](https://img.shields.io/david/mattcarlotta/nextjs-ssr-kit.svg?style=for-the-badge)](https://david-dm.org/kuhlaid/nextjs-ssr-kit-ss) [![License](https://img.shields.io/github/license/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/kuhlaid/nextjs-ssr-kit-ss/blob/master/LICENSE)
 
+## Working with this app
+
+Run this command before pushing new updates to Git since it run EsLint to check for TypeScript errors that will prevent a production build from running.
+
+```bash
+yarn build
+```
+
+Use this to simply check for simple errors (but build will do a more thorough check)
+
+```bash
+yarn lint
+```
+
 ## ToDo Items
 
 [ ] Update react bootstrap once it moves out of beta v2

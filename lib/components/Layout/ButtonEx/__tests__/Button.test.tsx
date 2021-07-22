@@ -1,16 +1,16 @@
 import { mount, ReactWrapper } from "enzyme";
-import Button from "../index";
+import ButtonEx from "../index";
 
 const initProps = {
   children: "Test"
 };
 
-describe("Styled Button", () => {
+describe("Styled ButtonEx", () => {
   let wrapper: ReactWrapper;
   let buttonNode: () => ReactWrapper;
   beforeEach(() => {
     wrapper = mount(
-      <Button type="button" dataTestId="test-button" {...initProps} />
+      <ButtonEx type="button" dataTestId="test-button" {...initProps} />
     );
     buttonNode = () => wrapper.find("[data-testid='test-button']");
   });

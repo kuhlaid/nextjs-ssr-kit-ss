@@ -1,6 +1,7 @@
 import { BsFillHouseFill, BsServer, BsPersonPlusFill } from "react-icons/bs";
 import type { SeedDB } from "lib/actions/Users";
 import { Button } from "react-bootstrap";
+import ButtonEx from "lib/components/Layout/ButtonEx";
 
 export type UserListNavigationProps = {
   className?: string;
@@ -24,7 +25,7 @@ const UserListNavigationComponent = ({
     </div>
     <div className="p-2 d-flex">
       <div className="justify-content-center">
-        <Button
+        <ButtonEx
           className="flex-wrap"
           variant="outline-primary"
           dataTestId="seed-database"
@@ -33,11 +34,11 @@ const UserListNavigationComponent = ({
         >
           <BsServer className="me-2" />
           Seed Database
-        </Button>
+        </ButtonEx>
       </div>
       {/* <div className="flex-fill"> </div> */}
       <div className="ms-auto justify-content-center">
-        <Button
+        <ButtonEx
           variant="outline-primary"
           className="flex-wrap"
           type="button"
@@ -45,7 +46,7 @@ const UserListNavigationComponent = ({
         >
           <BsPersonPlusFill className="me-2" />
           Create User
-        </Button>
+        </ButtonEx>
       </div>
     </div>
   </div>

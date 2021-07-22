@@ -33,7 +33,7 @@ const DisplayTagList = ({
   <>
     {!isEmpty(data) ? (
       data.map((props: TagData, idx) => (
-        <div className="m-2 p-2" key={props._id}>
+        <div className="m-2 p-2 d-flex" key={props._id}>
           {isEditingID !== props._id ? (
             <Card
               {...props}

@@ -1,6 +1,7 @@
 import { BsFillHouseFill, BsServer, BsPersonPlusFill } from "react-icons/bs";
 import type { SeedDB } from "lib/actions/Tags";
 import { Button } from "react-bootstrap";
+import ButtonEx from "../ButtonEx";
 
 export type TagListNavigationProps = {
   className?: string;
@@ -24,7 +25,7 @@ const TagListNavigationComponent = ({
     </div>
     <div className="p-2 d-flex">
       <div className="justify-content-center">
-        <Button
+        <ButtonEx
           className="flex-wrap"
           variant="outline-primary"
           dataTestId="seed-database"
@@ -33,7 +34,7 @@ const TagListNavigationComponent = ({
         >
           <BsServer className="me-2" />
           Seed Database
-        </Button>
+        </ButtonEx>
       </div>
       {/* <div className="flex-fill"> </div> */}
       <div className="ms-auto justify-content-center">
