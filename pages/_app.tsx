@@ -2,7 +2,6 @@ import * as React from "react";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import toast from "lib/components/App/Toast";
-import GlobalStylesheet from "lib/styles/globalStylesheet";
 import { withRedux } from "lib/store";
 import "react-toastify/dist/ReactToastify.css";
 import { AppProps, ReactElement } from "lib/types";
@@ -24,7 +23,6 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
       <div id="app">
         <Component {...pageProps} />
       </div>
-      <GlobalStylesheet />
       <ToastContainer
         position="top-right"
         autoClose={7500}

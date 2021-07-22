@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const DATABASE_URI = process.env.DATABASE_URI;
+const { DATABASE_URI } = process.env;
 
 if (!DATABASE_URI) {
   throw new Error(

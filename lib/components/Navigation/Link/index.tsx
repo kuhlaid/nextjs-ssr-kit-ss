@@ -18,7 +18,6 @@ const LinkComponent = ({ children, className, href, ...rest }: LinkProps) => (
 
 const Link = styled(LinkComponent)`
   cursor: pointer;
-  color: #fff;
   font-size: 16px;
   text-align: center;
   transition: all 0.2s ease-in-out;

@@ -9,6 +9,12 @@ This a template for creating a NextJs app with testing and best practices and mu
 
 [![Codecov](https://img.shields.io/codecov/c/github/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://codecov.io/gh/kuhlaid/nextjs-ssr-kit-ss) [![Open Issues](https://img.shields.io/github/issues-raw/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/kuhlaid/nextjs-ssr-kit-ss/issues) [![Dependencies](https://img.shields.io/david/mattcarlotta/nextjs-ssr-kit.svg?style=for-the-badge)](https://david-dm.org/kuhlaid/nextjs-ssr-kit-ss) [![License](https://img.shields.io/github/license/mattcarlotta/nextjs-ssr-kit?style=for-the-badge)](https://github.com/kuhlaid/nextjs-ssr-kit-ss/blob/master/LICENSE)
 
+## ToDo Items
+
+[ ] Update react bootstrap once it moves out of beta v2
+[ ] Work on database watching (https://www.youtube.com/watch?v=9LA7_CSyZb8)
+[ ] Add user login
+
 ## Table of contents
 
 [Pre-Configured Packages](#pre-configured-packages)

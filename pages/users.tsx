@@ -14,7 +14,12 @@ import FadeIn from "lib/components/Layout/FadeIn";
 import LoadingUsers from "lib/components/Layout/LoadingUsers";
 import UserListNavigation from "lib/components/Layout/UserListNavigation";
 import Header from "lib/components/Navigation/Header";
-import { ConnectedProps, ReactElement, UserData, PickReduxState } from "lib/types";
+import {
+  ConnectedProps,
+  ReactElement,
+  UserData,
+  PickReduxState
+} from "lib/types";
 
 /* istanbul ignore next */
 const mapState = ({ users, server }: PickReduxState<"users" | "server">) => ({
@@ -98,7 +103,7 @@ const ShowUsers = ({
   }, [fetchUsers, isLoading]);
 
   return (
-    <div data-testid="users-page" style={{ padding: "20px 0 40px" }}>
+    <>
       <Header title="Users" url="/users" />
       <Center>
         <UserListNavigation openModal={handleOpenModal} seedDB={seedDB} />
@@ -147,7 +152,7 @@ const ShowUsers = ({
           </FadeIn>
         )}
       </Center>
-    </div>
+    </>
   );
 };
 

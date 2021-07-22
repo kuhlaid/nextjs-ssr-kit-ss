@@ -7,13 +7,11 @@ import { BsFillPersonPlusFill } from "react-icons/bs";
 import { resetMessage } from "lib/actions/Server";
 import * as actions from "lib/actions/Tags";
 import TagForm from "lib/components/Forms/TagForm";
-import Center from "lib/components/Layout/Center";
 import DisplayTagList from "lib/components/Layout/DisplayTagList";
 import Modal from "lib/components/Layout/Modal";
-import FadeIn from "lib/components/Layout/FadeIn";
 import LoadingTags from "lib/components/Layout/LoadingTags";
-import TagListNavigation from "lib/components/Layout/TagListNavigation";
 import Header from "lib/components/Navigation/Header";
+import TagListNavigation from "lib/components/Layout/TagListNavigation";
 import {
   ConnectedProps,
   ReactElement,
@@ -103,42 +101,44 @@ const ShowTags = ({
   }, [fetchTags, isLoading]);
 
   return (
-    <div data-testid="tags-page" style={{ padding: "20px 0 40px" }}>
+    <>
       <Header title="Tags" url="/tags" />
-      <Center>
+      <div>
         <TagListNavigation openModal={handleOpenModal} seedDB={seedDB} />
-        {state.openModal && (
-          <Modal
-            onClick={handleCloseModal}
-            title={
-              <>
-                <BsFillPersonPlusFill
-                  style={{
-                    fontSize: 18,
-                    marginRight: 8,
-                    position: "relative",
-                    top: 2
-                  }}
-                />
-                New Tag Form
-              </>
-            }
-            maxWidth="750px"
-          >
-            <TagForm
-              {...rest}
-              _id=""
-              submitAction={createTagAction}
-              resetMessage={resetMessage}
-              cancelForm={handleCloseModal}
-              resetForm={handleCloseModal}
-            />
-          </Modal>
-        )}
-        {isLoading ? (
-          <LoadingTags height={398} width={780} opacity="1" />
-        ) : (
-          <FadeIn timing="0.3s">
+      </div>
+      <div>
+        <div>
+          {state.openModal && (
+            <Modal
+              onClick={handleCloseModal}
+              title={
+                <>
+                  <BsFillPersonPlusFill
+                    style={{
+                      fontSize: 18,
+                      marginRight: 8,
+                      position: "relative",
+                      top: 2
+                    }}
+                  />
+                  New Tag Form
+                </>
+              }
+              maxWidth="750px"
+            >
+              <TagForm
+                {...rest}
+                _id=""
+                submitAction={createTagAction}
+                resetMessage={resetMessage}
+                cancelForm={handleCloseModal}
+                resetForm={handleCloseModal}
+              />
+            </Modal>
+          )}
+          {isLoading ? (
+            <LoadingTags height={398} width={780} opacity="1" />
+          ) : (
             <DisplayTagList
               {...state}
               {...rest}
@@ -149,10 +149,10 @@ const ShowTags = ({
               resetMessage={resetMessage}
               updateTag={updateTagAction}
             />
-          </FadeIn>
-        )}
-      </Center>
-    </div>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 
