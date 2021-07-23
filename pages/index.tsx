@@ -3,9 +3,10 @@ import styled from "@emotion/styled";
 import { FaCoffee, FaHashtag } from "react-icons/fa";
 import Center from "lib/components/Layout/Center";
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
+import Image from "next/Image";
 import Header from "lib/components/Navigation/Header";
 import { ReactElement } from "lib/types";
+import imgnextjsKit from "public/images/nextjsKit.png";
 
 const PageContainer = styled.div`
   max-width: 850px;
@@ -20,7 +21,7 @@ const Home = (): ReactElement => (
   <Center data-testid="home-page" style={{ height: "100%", color: "#0076ff" }}>
     <Header title="Home" url="/" />
     <PageContainer>
-      <Image src="images/nextjsKit.png" rounded alt="ssrLogoLight.png" fluid />
+      <Image src={imgnextjsKit} alt="ssrLogoLight.png" />
       <div className="text-secondary h2">
         A framework for building NextJs apps.
       </div>
