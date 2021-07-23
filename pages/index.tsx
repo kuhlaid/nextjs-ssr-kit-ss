@@ -6,34 +6,24 @@ import Button from "react-bootstrap/Button";
 import Image from "next/Image";
 import Header from "lib/components/Navigation/Header";
 import { ReactElement } from "lib/types";
-import imgnextjsKit from "public/images/nextjsKit.png";
-
-const PageContainer = styled.div`
-  max-width: 850px;
-  width: 100%;
-  padding-top: 25vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-`;
+import imgnextjsKit from "public/images/640px-Nextjs-logo.svg.png";
 
 const Home = (): ReactElement => (
   <Center data-testid="home-page" style={{ height: "100%", color: "#0076ff" }}>
     <Header title="Home" url="/" />
-    <PageContainer>
-      <Image src={imgnextjsKit} alt="ssrLogoLight.png" />
-      <div className="text-secondary h2">
-        A framework for building NextJs apps.
-      </div>
-      <Button href="/users" variant="outline-primary" className="m-3 ps-4 pe-4">
-        <FaCoffee className="m-1" />
-        Users
-      </Button>
-      <Button href="/tags" variant="outline-primary" className="m-3 ps-4 pe-4">
-        <FaHashtag className="m-1" />
-        Tags
-      </Button>
-    </PageContainer>
+    <Image src={imgnextjsKit} alt="ssrLogoLight.png" height="300px" />
+    <div className="text-primary h1">SSR Kit - Single Server</div>
+    <div className="text-secondary h2">
+      A framework for building NextJs apps.
+    </div>
+    <Button href="/users" variant="outline-primary" className="m-3 ps-4 pe-4">
+      <FaCoffee className="m-1" />
+      Users
+    </Button>
+    <Button href="/tags" variant="outline-primary" className="m-3 ps-4 pe-4">
+      <FaHashtag className="m-1" />
+      Tags
+    </Button>
   </Center>
 );
 
