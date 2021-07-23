@@ -1,9 +1,8 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 import { FaCoffee, FaHashtag } from "react-icons/fa";
 import Center from "lib/components/Layout/Center";
 import Button from "react-bootstrap/Button";
-import Image from "next/Image";
+import Image from "next/image";
 import Header from "lib/components/Navigation/Header";
 import { ReactElement } from "lib/types";
 import imgnextjsKit from "public/images/640px-Nextjs-logo.svg.png";

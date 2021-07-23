@@ -120,7 +120,7 @@ const TagForm = (props: TagFormProps): JSX.Element => {
             dataTestId="submit"
             primary
             disabled={isSubmitting}
-            type="submit"
+            onClick={handleSubmit}
           >
             Submit
           </ButtonEx>
