@@ -1,2 +1,7 @@
 # try to ensure Linux line feed in files
 *.* text eol=lf
+
+# DO NOT change line feed endings of image files
+*.jpg   -text
+*.png   -text
+*.ico   -text
